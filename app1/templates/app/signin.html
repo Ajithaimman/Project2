@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}  
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+    <title>Signin</title>
+    <style>
+      .designdiv{
+        width:100%;
+        min-height: 50%;
+        background: linear-gradient(orange,white);
+      }
+      form{
+            margin-left: 250px;
+            width:40%;
+            background-image: linear-gradient(red, yellow);
+            border-radius: 20px;
+        }
+        @media only screen and (max-width: 1000px) {
+            form {
+                margin-left: 100px;
+                width:50%;
+                
+            }
+        }
+        @media only screen and (max-width: 760px) {
+            form {
+                margin-left: 30px;
+                width:80%;
+            }
+        }
+        @media only screen and (max-width: 460px) {
+            form {
+                margin-left: 30px;
+                width:80%;
+              
+            }
+        }
+
+        .div1{
+            margin-left: 120px;
+        }
+        @media only screen and (max-width: 1000px) {
+          .div1 {
+                margin-left: 80px;
+            }
+        }
+        @media only screen and (max-width: 760px) {
+          .div1 {
+                margin-left: 50px;
+            }
+        }
+        @media only screen and (max-width: 460px) {
+          .div1 {
+                margin-left: 40px;
+            }
+        }
+
+        button{
+            margin-left: 200px;
+        }
+        @media only screen and (max-width: 1000px) {
+          button {
+                margin-left: 150px;
+            }
+        }
+        @media only screen and (max-width: 760px) {
+          button {
+                margin-left: 120px;
+            }
+        }
+        @media only screen and (max-width: 460px) {
+          button{
+                margin-left: 80px;
+            }
+        }
+
+        .linkdiv{
+            margin-left: 140px;
+        }
+        @media only screen and (max-width: 1000px) {
+          .linkdiv{
+                margin-left: 100px;
+            }
+        }
+        @media only screen and (max-width: 760px) {
+          .linkdiv{
+                margin-left: 100px;
+            }
+        }
+        @media only screen and (max-width: 460px) {
+          .linkdiv{
+                margin-left: 50px;
+            }
+        }
+        
+        .content 
+        {
+            /* position: fixed;
+            bottom: 0; */
+            /* background: rgba(0, 0, 0, 0.5); */
+            color: #f1f1f1;
+            width: 100%;
+            padding: 20px;
+        }
+
+        #myVideo 
+        {
+            position: fixed;
+            right: 0;
+            bottom: 0;
+            min-width: 100%; 
+            min-height: 100%;
+        }
+    </style>
+</head>
+<body>
+
+  <div class="container">
+    <video autoplay muted loop id="myVideo">
+        <source src="{% static 'app/images/product/bgvideo1.mp4' %}" type="video/mp4">
+    </video>
+
+    <div class="row content">
+      <div class="col">
+        <div class="designdiv">
+          <h1 class="text-white;" style="font-size: 60px;text-align: center;color:red">Welcome all..</h1>
+          <br>
+          <p style="font-size: 30px;text-align: center;color:blue">Your support means the world to us! Without it, we would not be able to have the impact we do on our community and world – thank you!”</p>
+        </div>
+        <div class="columns is-centered">
+          <div class="column is-5-tablet is-4-desktop is-3-widescreen">
+            <form method="POST">
+              {% csrf_token %}
+    
+              <div class="field mt-3 div1">
+                <label for="" class="label">Username</label>
+                <div class="control has-icons-left">
+                  <span class="icon is-small is-left">
+                    <i class="fa fa-user"></i>
+                  </span>
+                  {{ form.username }}
+                  
+                </div>
+               
+              </div>
+              
+    
+              <div class="field mt-3 div1">
+                <label for="" class="label">Password</label>
+                <div class="control has-icons-left">
+                  <span class="icon is-small is-left">
+                    <i class="fa fa-lock"></i>
+                  </span>
+                  {{ form.password }}
+                  
+                </div>
+               
+              </div>
+    
+    
+              <div class="field mt-3">
+                <button type="submit" class="btn btn-primary">Signin</button>
+              </div>
+    
+              <div class="linkdiv" style="color:red">
+                <a href="{% url 'password_reset' %}" class="text-decoration-none">forgot password?</a><br><br>
+                New user?<a href="{% url 'signup' %}" class="text-decoration-none">Signup now</a>
+                
+              </div>
+    
+            </form>
+          </div>
+        </div>
+     </div>
+        
+    </div>
+
+  </div>
+  
+    
+</body>
+</html>
+

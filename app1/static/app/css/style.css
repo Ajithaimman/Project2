@@ -1,0 +1,22 @@
+.m1kpro{
+    color: #636362;
+    font-size: 22px;
+    line-height: 22px;
+    margin-bottom: 15px;
+    width: 43%;
+    margin: 0 auto;
+    text-align: center ;
+}
+.dolltex{
+    text-align:center;
+}
+
+#form1{
+    width:30%;
+    background-color: azure;
+    margin-left: 50px;
+}
+/* .logout-container{
+    background-color: aqua;
+    margin-left: 300px;
+} */
